@@ -15,7 +15,7 @@ const App: React.FC = () => {
         const gtfsDecoded = gtfs.transit_realtime.FeedMessage.decode(
           new Uint8Array(data)
         ).entity.filter(
-          entity =>
+          (entity: any) =>
             entity &&
             entity.tripUpdate &&
             entity.tripUpdate.stopTimeUpdate &&
